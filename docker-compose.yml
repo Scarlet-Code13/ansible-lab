@@ -1,0 +1,14 @@
+services:
+  server1:
+    image: ansible-server1:latest
+    container_name: server1
+    ports:
+      - "2221:22"
+    command: bash -c "mkdir -p /run/sshd && /usr/sbin/sshd && sleep infinity"
+
+  server2:
+    image: ansible-server2:latest
+    container_name: server2
+    ports:
+      - "2222:22"
+    command: bash -c "mkdir -p /run/sshd && /usr/sbin/sshd && sleep infinity"

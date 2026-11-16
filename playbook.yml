@@ -1,0 +1,15 @@
+---
+- name: Mi primer Playbook de Ansible
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Mostrar mensaje de prueba
+      debug:
+        msg: "Ansible funciona correctamente en este servidor"
+
+    - name: Crear directorio de practica
+      file:
+        path: /home/practica-ansible
+        state: directory
+        mode: '0755'
